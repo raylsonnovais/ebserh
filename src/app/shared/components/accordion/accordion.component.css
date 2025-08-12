@@ -1,0 +1,4 @@
+.br-accordion {
+  background: var(--bg-color);
+  border-top: 1px solid var(--color-secondary-04);
+}

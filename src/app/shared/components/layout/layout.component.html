@@ -1,0 +1,17 @@
+<br-header
+  image-src="https://www.gov.br/ds/assets/govbr-logo.svg"
+  image-alt="logo govbr"
+  title="Painel de Controle PoC">
+  <div class="header-menu">
+    <br-button type="button" (click)="logout()">
+      <i class="fas fa-sign-out-alt" aria-hidden="true"></i>
+      Sair
+    </br-button>
+  </div>
+</br-header>
+
+<main class="container-fluid my-4">
+  <app-breadcrumb></app-breadcrumb>
+
+  <router-outlet></router-outlet>
+</main>

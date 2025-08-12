@@ -1,0 +1,35 @@
+<nav class="br-breadcrumb" aria-label="Breadcrumbs" *ngIf="breadcrumbs.length > 0">
+  <ol class="crumb-list" role="list" #crumbList>
+
+    <li class="crumb home">
+      <a class="br-button circle" routerLink="/dashboard">
+        <span class="sr-only">Página inicial</span><i class="fas fa-home"></i>
+      </a>
+    </li>
+
+    <li class="crumb menu-mobil" *ngIf="isCollapsed">
+      <i class="icon fas fa-chevron-right"></i>
+      <button class="br-button circle" type="button" aria-label="Abrir menu Breadcrumb" (click)="toggleDropdown($event)">
+        <i class="fas fa-ellipsis-h"></i>
+      </button>
+    </li>
+
+    <ng-container *ngFor="let crumb of breadcrumbs; let i = index; let isLast = last">
+      <li class="crumb"
+          [class.d-none]="isCollapsed && i > 0 && !isLast"
+          [attr.data-active]="isLast ? 'active' : null">
+        <i class="icon fas fa-chevron-right"></i>
+        <a *ngIf="!isLast" [routerLink]="crumb.url">{{ crumb.label }}</a>
+        <span *ngIf="isLast" tabindex="0" aria-current="page">{{ crumb.label }}</span>
+      </li>
+    </ng-container>
+  </ol>
+
+  <nav class="br-card" *ngIf="isDropdownOpen">
+    <div class="br-list">
+      <div class="br-item" *ngFor="let hiddenCrumb of hiddenCrumbs">
+        <a [routerLink]="hiddenCrumb.url" (click)="isDropdownOpen = false">{{ hiddenCrumb.label }}</a>
+      </div>
+    </div>
+  </nav>
+</nav>
