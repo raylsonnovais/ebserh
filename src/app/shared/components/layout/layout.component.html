@@ -1,8 +1,16 @@
-<br-header
-  image-src="https://www.gov.br/ds/assets/govbr-logo.svg"
-  image-alt="logo govbr"
+<br-header image-src="https://www.gov.br/ds/assets/govbr-logo.svg" image-alt="logo govbr"
   title="Painel de Controle PoC">
   <div class="header-menu">
+    <app-avatar [userName]="'Maria Oliveira'" [backgroundClass]="'bg-orange-vivid-30'" [textColorClass]="'text-pure-0'"
+      [menuItems]="
+      [
+        { label: 'Dados pessoais', href: '/dados' },
+        { label: 'Privacidade', action: onPrivacy },
+        { label: 'Notificações', href: '/notificacoes' },
+        { label: 'Perguntas frequentes', href: '/faq' }
+      ]">
+    </app-avatar>
+
     <br-button type="button" (click)="logout()">
       <i class="fas fa-sign-out-alt" aria-hidden="true"></i>
       Sair

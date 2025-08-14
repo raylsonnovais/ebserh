@@ -1,0 +1,27 @@
+#avatar-dropdown-trigger {
+  height: auto;
+  padding: 0.25rem 0.5rem;
+}
+
+#avatar-container {
+  position: relative; /* Referência para o dropdown */
+}
+
+#avatar-menu {
+  position: absolute;
+  top: 100%; /* Aparece logo abaixo do botão */
+  right: 0;
+  min-width: 180px;
+  z-index: 1000;
+}
+
+.br-list .br-item {
+  background-color: #f5f5f5; /* cor mais escura que branco */
+  padding: 0.5rem 1rem;
+  display: block;
+  text-decoration: none;
+}
+
+.br-list .br-item:hover {
+  background-color: #e0e0e0; /* mais escuro no hover */
+}

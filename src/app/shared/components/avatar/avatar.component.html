@@ -1,0 +1,21 @@
+<div id="avatar-container">
+  <button class="br-sign-in" type="button" id="avatar-dropdown-trigger" (click)="toggleMenu()"
+    [attr.aria-label]="'Olá, ' + firstName">
+    <span class="br-avatar" [title]="userName">
+      <span class="content" [ngClass]="[backgroundClass, textColorClass]">
+        {{ firstLetter }}
+      </span>
+    </span>
+    <span class="ml-2 text-gray-80 text-weight-regular">
+      Olá, <span class="text-weight-semi-bold">{{ firstName }}</span>
+    </span>
+    <i class="fas" [ngClass]="isMenuOpen ? 'fa-caret-up' : 'fa-caret-down'" aria-hidden="true"></i>
+  </button>
+
+  <div class="br-list" id="avatar-menu" role="menu" aria-labelledby="avatar-dropdown-trigger" [hidden]="!isMenuOpen">
+    <a *ngFor="let item of menuItems" class="br-item" [href]="item.href || 'javascript:void(0)'" role="menuitem"
+      (click)="item.action?.()">
+      {{ item.label }}
+    </a>
+  </div>
+</div>
