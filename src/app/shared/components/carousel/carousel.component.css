@@ -1,0 +1,80 @@
+.carousel-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.carousel-section {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 2rem;
+}
+
+.carousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carousel-stage {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  max-width: 600px;
+  height: 200px;
+  position: relative;
+}
+
+.carousel-stage.vertical {
+  flex-direction: column;
+  height: 220px;
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: #f0f0f0;
+  font-size: 1.5rem;
+  height: 100%;
+}
+
+.carousel-slide.active {
+  display: flex;
+}
+
+.carousel-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  margin: 0.5rem;
+}
+
+.carousel-indicators,
+.carousel-indicators-textual {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.carousel-indicators button,
+.carousel-indicators-textual button {
+  background-color: #ccc;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.carousel-indicators button.active,
+.carousel-indicators-textual button.active {
+  background-color: #000;
+  color: white;
+}
+
+.carousel-indicators-textual button {
+  border-radius: 4px;
+  padding: 0.4rem 0.8rem;
+}

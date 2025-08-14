@@ -1,0 +1,114 @@
+<div class="carousel-showcase">
+
+  <section class="carousel-section">
+    <h2>Carrossel Padrão</h2>
+    <div class="carousel">
+      <button class="carousel-btn prev" (click)="prev('base')">‹</button>
+      <div class="carousel-stage">
+        <div *ngFor="let slide of slides; let i = index"
+             class="carousel-slide"
+             [class.active]="i === indices.base">
+          <div class="carousel-content">{{ slide }}</div>
+        </div>
+      </div>
+      <button class="carousel-btn next" (click)="next('base')">›</button>
+      <div class="carousel-indicators">
+        <button *ngFor="let slide of slides; let i = index"
+                [class.active]="i === indices.base"
+                (click)="goTo('base', i)">
+          {{ i + 1 }}
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="carousel-section">
+    <h2>Carrossel Circular</h2>
+    <div class="carousel">
+      <button class="carousel-btn prev" (click)="prev('circular', true)">‹</button>
+      <div class="carousel-stage">
+        <div *ngFor="let slide of slides; let i = index"
+             class="carousel-slide"
+             [class.active]="i === indices.circular">
+          <div class="carousel-content">{{ slide }}</div>
+        </div>
+      </div>
+      <button class="carousel-btn next" (click)="next('circular', true)">›</button>
+      <div class="carousel-indicators">
+        <button *ngFor="let slide of slides; let i = index"
+                [class.active]="i === indices.circular"
+                (click)="goTo('circular', i)">
+          {{ i + 1 }}
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="carousel-section">
+    <h2>Carrossel Interno</h2>
+    <div class="carousel interno">
+      <button class="carousel-btn prev" (click)="prev('interno')">‹</button>
+      <div class="carousel-stage interno">
+        <div *ngFor="let slide of slides; let i = index"
+             class="carousel-slide"
+             [class.active]="i === indices.interno">
+          <div class="carousel-content">{{ slide }}</div>
+        </div>
+      </div>
+      <button class="carousel-btn next" (click)="next('interno')">›</button>
+    </div>
+  </section>
+
+  <section class="carousel-section">
+    <h2>Carrossel com Indicador Textual</h2>
+    <div class="carousel">
+      <button class="carousel-btn prev" (click)="prev('textual')">‹</button>
+      <div class="carousel-stage">
+        <div *ngFor="let slide of slides; let i = index"
+             class="carousel-slide"
+             [class.active]="i === indices.textual">
+          <div class="carousel-content">{{ slide }}</div>
+        </div>
+      </div>
+      <button class="carousel-btn next" (click)="next('textual')">›</button>
+      <div class="carousel-indicators-textual">
+        <button *ngFor="let slide of slides; let i = index"
+                [class.active]="i === indices.textual"
+                (click)="goTo('textual', i)">
+          {{ slide }}
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="carousel-section">
+    <h2>Carrossel Híbrido Horizontal</h2>
+    <div class="carousel">
+      <button class="carousel-btn prev" (click)="prev('hibw')">‹</button>
+      <div class="carousel-stage horizontal">
+        <div *ngFor="let slide of slides; let i = index"
+             class="carousel-slide"
+             [class.active]="i === indices.hibw">
+          <div class="carousel-content">{{ slide }}</div>
+        </div>
+      </div>
+      <button class="carousel-btn next" (click)="next('hibw')">›</button>
+    </div>
+  </section>
+
+  <section class="carousel-section">
+    <h2>Carrossel Híbrido Vertical</h2>
+    <div class="carousel vertical">
+      <button class="carousel-btn prev" (click)="prev('hibh')">‹</button>
+      <div class="carousel-stage vertical">
+        <div *ngFor="let slide of slides; let i = index"
+             class="carousel-slide"
+             [class.active]="i === indices.hibh">
+          <div class="carousel-content">{{ slide }}</div>
+        </div>
+      </div>
+      <button class="carousel-btn next" (click)="next('hibh')">›</button>
+    </div>
+  </section>
+
+</div>

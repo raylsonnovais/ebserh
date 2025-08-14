@@ -1,0 +1,26 @@
+.sidebar {
+  margin-top: 92px;
+  padding: 1rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar a {
+  display: block;
+  padding: 0.8rem 0.8rem;
+  color: #1351b4;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.sidebar a.active {
+  background-color: #1351b4;
+  color: white;
+}
