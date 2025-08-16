@@ -1,25 +1,20 @@
-<br-header image-src="https://www.gov.br/ds/assets/govbr-logo.svg" image-alt="logo govbr"
-  title="Painel de Controle PoC">
-  <div class="header-menu">
-    <app-avatar [userName]="'Maria Oliveira'" [backgroundClass]="'bg-orange-vivid-30'" [textColorClass]="'text-pure-0'"
-      [menuItems]="
-      [
-        { label: 'Dados pessoais', href: '/dados' },
-        { label: 'Privacidade', action: onPrivacy },
-        { label: 'Notificações', href: '/notificacoes' },
-        { label: 'Perguntas frequentes', href: '/faq' }
-      ]">
-    </app-avatar>
+<div class="layout-container">
+  <!-- Sidebar fixo -->
+  <app-sidebar></app-sidebar>
 
-    <br-button type="button" (click)="logout()">
-      <i class="fas fa-sign-out-alt" aria-hidden="true"></i>
-      Sair
-    </br-button>
+  <!-- Conteúdo principal -->
+  <div class="main-content">
+    <!-- Componente Topbar -->
+    <app-topbar (logoutClick)="logout()"></app-topbar>
+
+    <!-- Conteúdo da página -->
+    <main class="container-fluid">
+      <app-breadcrumb></app-breadcrumb>
+      <app-cookiebar></app-cookiebar>
+      <router-outlet></router-outlet>
+    </main>
+
+    <!-- Footer fixo no fim -->
+    <app-footer></app-footer>
   </div>
-</br-header>
-
-<main class="container-fluid my-4">
-  <app-breadcrumb></app-breadcrumb>
-
-  <router-outlet></router-outlet>
-</main>
+</div>

@@ -1,20 +1,37 @@
-.header-menu {
+.layout-container {
   display: flex;
-  align-items: center;
-  position: fixed;
-  top: 20px;
-  right: 40px;
-  z-index: 1000;
-  gap: 1rem;
+  height: 100vh;
 }
 
-.header-menu br-button {
-  margin-left: 1rem; /* ~16px */
+/* Sidebar fixo */
+app-sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ocupa toda a altura disponível da layout-container */
+  width: 240px;
+  flex-shrink: 0;
+  background-color: #ffffff;
+  border-right: 1px solid #ddd;
 }
 
-br-header .header-menu {
+/* Área do conteúdo */
+.main-content {
+  flex: 1;
   display: flex;
-  align-items: center;
-  gap: 1rem; /* espaçamento entre avatar e sair */
-  padding: 0 1rem; /* mesmo valor lateral do main.container-fluid */
+  flex-direction: column;
+}
+
+/* Conteúdo principal cresce e empurra o footer */
+main {
+  flex: 1;
+  margin-top: 1rem;
+}
+
+/* Footer estilizado */
+app-footer {
+  margin-top: 24%;
+  background-color: #f5f6f8;
+  border-top: 1px solid #ddd;
+  padding: 1rem;
+  text-align: center;
 }

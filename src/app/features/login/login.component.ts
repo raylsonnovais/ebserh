@@ -1,15 +1,16 @@
 // src/app/features/login/login.component.ts
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import {AuthService} from '../../core/services/auth.service';
-import {NgxMaskDirective} from 'ngx-mask';
+import { NgxMaskDirective } from 'ngx-mask';
+import { AuthService } from '../../core/services/auth.service';
+import { SignInComponent } from '../../shared/components/sign-in/sign-in.component';
 
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, FormsModule, NgxMaskDirective],
+  imports: [CommonModule, FormsModule, NgxMaskDirective, SignInComponent],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'], // Importa o nosso novo CSS
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
