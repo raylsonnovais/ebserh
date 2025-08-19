@@ -1,14 +1,17 @@
-import { ApplicationConfig, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { ApplicationConfig } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
-import { provideHttpClient } from '@angular/common/http';
-import {provideNgxMask} from 'ngx-mask'; // Boa prática para futuras chamadas de API
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { provideNgxMask } from 'ngx-mask';
+import { authInterceptor } from './core/services/auth.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
-    provideHttpClient(),
+    provideHttpClient(
+      withInterceptors([authInterceptor])
+    ),
     provideNgxMask(),
   ],
 };

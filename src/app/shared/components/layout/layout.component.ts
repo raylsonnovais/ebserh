@@ -7,11 +7,13 @@ import { CookiebarComponent } from '../cookiebar/cookiebar.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { TopbarComponent } from './topbar/topbar.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-layout',
   standalone: true,
   imports: [
+    CommonModule,
     RouterOutlet,
     BreadcrumbComponent,
     SidebarComponent,
@@ -24,7 +26,13 @@ import { TopbarComponent } from './topbar/topbar.component';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class LayoutComponent {
+  sidebarVisible = true;
+
   constructor(private authService: AuthService) { }
+
+  toggleSidebar() {
+    this.sidebarVisible = !this.sidebarVisible;
+  }
 
   logout(): void {
     this.authService.logout();

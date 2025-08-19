@@ -1,13 +1,20 @@
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
 .layout-container {
   display: flex;
-  height: 100vh;
+  flex: 1;
+  overflow: hidden;
 }
 
 /* Sidebar fixo */
 app-sidebar {
   display: flex;
   flex-direction: column;
-  height: 100%; /* Ocupa toda a altura disponível da layout-container */
+  height: auto;
   width: 240px;
   flex-shrink: 0;
   background-color: #ffffff;
@@ -21,17 +28,22 @@ app-sidebar {
   flex-direction: column;
 }
 
-/* Conteúdo principal cresce e empurra o footer */
-main {
+/* Conteúdo principal */
+main.container-fluid {
+  padding: 1rem;
   flex: 1;
-  margin-top: 1rem;
+  overflow-y: auto;
+  overflow-x: auto;
 }
 
 /* Footer estilizado */
 app-footer {
-  margin-top: 24%;
+  height: 80px;
+  width: 100%;
   background-color: #f5f6f8;
   border-top: 1px solid #ddd;
   padding: 1rem;
   text-align: center;
+  box-sizing: border-box;
+  flex-shrink: 0;
 }

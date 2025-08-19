@@ -1,20 +1,22 @@
-<div class="layout-container">
-  <!-- Sidebar fixo -->
-  <app-sidebar></app-sidebar>
+<div class="page-wrapper">
+  <div class="layout-container">
+    <!-- Sidebar fixo -->
+    <app-sidebar *ngIf="sidebarVisible"></app-sidebar>
 
-  <!-- Conteúdo principal -->
-  <div class="main-content">
-    <!-- Componente Topbar -->
-    <app-topbar (logoutClick)="logout()"></app-topbar>
+    <!-- Conteúdo principal -->
+    <div class="main-content">
+      <!-- Componente Topbar -->
+      <app-topbar (menuToggle)="toggleSidebar()" (logoutClick)="logout()"></app-topbar>
 
-    <!-- Conteúdo da página -->
-    <main class="container-fluid">
-      <app-breadcrumb></app-breadcrumb>
-      <app-cookiebar></app-cookiebar>
-      <router-outlet></router-outlet>
-    </main>
-
-    <!-- Footer fixo no fim -->
-    <app-footer></app-footer>
+      <!-- Conteúdo da página -->
+      <main class="container-fluid">
+        <app-breadcrumb></app-breadcrumb>
+        <app-cookiebar></app-cookiebar>
+        <router-outlet></router-outlet>
+      </main>
+    </div>
   </div>
+
+  <!-- Footer fixo no fim -->
+  <app-footer></app-footer>
 </div>

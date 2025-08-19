@@ -12,6 +12,8 @@ import { RouterModule } from '@angular/router';
 })
 export class SidebarComponent {
   menuItems = [
+    { label: 'Início', route: '/dashboard', icon: 'fas fa-home' },
+    
     { label: 'Botões', route: '/buttons', icon: 'fas fa-hand-pointer' },
     { label: 'Cards', route: '/cards', icon: 'fas fa-id-card' },
     { label: 'Carrossel', route: '/carousel', icon: 'fas fa-images' },

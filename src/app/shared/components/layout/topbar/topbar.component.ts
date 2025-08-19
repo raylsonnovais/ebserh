@@ -14,8 +14,12 @@ export class TopbarComponent {
   @Input() title: string = 'Nome do Sistema';
   @Input() systemUrl: string = '/';
   @Input() showSearch: boolean = false;
-
+  @Output() menuToggle = new EventEmitter<void>();
   @Output() logoutClick = new EventEmitter<void>();
+
+  onMenuClick() {
+    this.menuToggle.emit();
+  }
 
   onLogout() {
     this.logoutClick.emit();

@@ -6,13 +6,18 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class AuthService {
-  private loggedIn = new BehaviorSubject<boolean>(false);
+  private loggedIn = new BehaviorSubject<boolean>(this.hasToken());
   isLoggedIn$ = this.loggedIn.asObservable();
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
+
+  private hasToken(): boolean {
+    return !!sessionStorage.getItem('auth_token');
+  }
 
   login(cpf: string, pass: string): boolean {
-    if (cpf && pass) { // Simulação simples
+    if (cpf && pass) {
+      sessionStorage.setItem('auth_token', 'dummy-token'); // Simulação
       this.loggedIn.next(true);
       this.router.navigate(['/dashboard']);
       return true;
@@ -21,7 +26,12 @@ export class AuthService {
   }
 
   logout(): void {
+    sessionStorage.removeItem('auth_token');
     this.loggedIn.next(false);
     this.router.navigate(['/login']);
+  }
+
+  isAuthenticated(): boolean {
+    return this.hasToken();
   }
 }

@@ -1,5 +1,90 @@
+<h2>Label à esquerda</h2>
+<div class="br-textarea">
+  <div class="row">
+    <div class="col-auto pt-half">
+      <label for="textarea-left-id1">Label</label>
+    </div>
+    <div class="col">
+      <textarea id="textarea-left-id1" placeholder="Exemplo de textarea simples"></textarea>
+      <p class="text-base mt-1">Texto auxiliar ao preenchimento.</p>
+    </div>
+  </div>
+</div>
+
+<h2>Sem limite com contador de caracteres</h2>
+
+<div class="br-textarea">
+  <label for="textarea-id9">Label</label>
+  <textarea id="textarea-id9" placeholder="Exemplo de textarea com contador e sem limite de caracteres"></textarea>
+  <div class="text-base mt-1"><span class="characters" aria-live="assertive"><strong>0</strong> caracteres
+      digitados</span></div>
+</div>
+
+
+<h2>Validação e estados</h2>
+<div class="row">
+  <div class="col-sm-4">
+    <div class="br-textarea success">
+      <label for="textarea-success">Label</label>
+      <textarea id="textarea-success" placeholder="Exemplo de textarea com sucesso"></textarea><span
+        class="feedback success" role="alert"><i class="fas fa-check-circle" aria-hidden="true"></i><span>Campo
+          correto</span></span>
+    </div>
+  </div>
+  <div class="col-sm-4 mt-5 mt-sm-0">
+    <div class="br-textarea danger">
+      <label for="textarea-danger">Label</label>
+      <textarea id="textarea-danger" placeholder="Exemplo de textarea com erro"></textarea><span class="feedback danger"
+        role="alert"><i class="fas fa-times-circle" aria-hidden="true"></i><span>Campo com erro</span></span>
+    </div>
+  </div>
+  <div class="col-sm-4 mt-5 mt-sm-0">
+    <div class="br-textarea">
+      <label for="textarea-id7">Label</label>
+      <textarea id="textarea-id7" placeholder="Exemplo de textarea desabilitado" disabled="disabled"></textarea><span
+        class="feedback warning" role="alert"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i><span>Campo
+          desabilitado</span></span>
+    </div>
+  </div>
+</div>
+
+<h2>Densidades</h2>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="br-textarea large">
+      <label for="textarea-density-id2">Densidade baixa</label>
+      <textarea id="textarea-density-id2" placeholder="Digite somente números"></textarea>
+    </div>
+  </div>
+  <div class="col-sm-6 mt-5 mt-sm-0">
+    <div class="br-textarea small">
+      <label for="textarea-density-id4">Densidade alta</label>
+      <textarea id="textarea-density-id4" placeholder="Digite somente números"></textarea>
+    </div>
+  </div>
+</div>
+
+<h2>Com limite e contador de caracteres</h2>
+<div class="br-textarea">
+  <label for="textarea-id8">Label</label>
+  <textarea id="textarea-id8" aria-controls="limitmax" placeholder="Exemplo de textarea com contador de caracteres"
+    maxlength="300"></textarea>
+  <div class="text-base mt-1"><span class="limit" aria-live="polite">Limite máximo de <strong>300</strong>
+      caracteres</span><span class="current" aria-live="polite" role="status" id="limitmax"></span></div>
+</div>
+
+<h2>Textarea padrão</h2>
 <div class="br-textarea">
   <label for="textarea-id1">Label</label>
   <textarea id="textarea-id1" placeholder="Exemplo de textarea simples"></textarea>
   <p class="text-base mt-1">Texto auxiliar ao preenchimento.</p>
+</div>
+
+<h2>Em fundo escuro</h2>
+<div class="p-3 bg-gray-60">
+  <div class="br-textarea dark-mode">
+    <label for="textarea-dark-id1">Label</label>
+    <textarea id="textarea-dark-id1" placeholder="Exemplo de textarea simples"></textarea>
+    <p class="text-base mt-1">Texto auxiliar ao preenchimento.</p>
+  </div>
 </div>

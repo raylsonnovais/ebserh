@@ -21,6 +21,13 @@
   padding: var(--header-padding) 0;
   position: relative;
 }
+.sair {
+  margin-top: 4px;
+  margin-left: 16px;
+}
+.header-sign-in {
+  display: flex;
+}
 .br-header .header-top,
 .br-header .header-bottom {
   display: flex;
